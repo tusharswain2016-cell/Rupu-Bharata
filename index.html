@@ -168,6 +168,15 @@ nav.up{box-shadow:0 2px 24px rgba(0,0,0,0.08);}
 .ab-k{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fire);margin-bottom:.25rem;font-weight:700;}
 .ab-v{font-size:.9rem;font-weight:700;color:var(--ink);}
 
+/* GALLERY */
+#gallery{background:var(--bg2);}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:2rem;}
+.gallery-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:1;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:all .3s;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.gallery-item:hover img{transform:scale(1.08);}
+.gallery-item::after{content:'';position:absolute;inset:0;background:rgba(255,106,0,.1);opacity:0;transition:opacity .3s;}
+.gallery-item:hover::after{opacity:1;}
+
 /* VISION */
 #vision .vwrap{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;}
 #vision .vright{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
@@ -360,12 +369,14 @@ footer{background:var(--ink2);}
   .ft-main{grid-template-columns:1fr;gap:2rem;padding:3rem 5% 2rem;}
   .ft-main>div:first-child{grid-column:auto;}
   .ft-bot{flex-direction:column;text-align:center;padding:1rem 5%;}
+  .gallery-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
 }
 @media(max-width:480px){
   .i-grid,.i-row2{grid-template-columns:1fr 1fr;}
   .ab-img-main{height:280px;}
   .ab-grid{grid-template-columns:1fr;}
   .sh{font-size:1.55rem;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
@@ -382,6 +393,7 @@ footer{background:var(--ink2);}
   </a>
   <ul class="nav-center">
     <li><a href="#about" data-en="About" data-od="ପରିଚୟ">About</a></li>
+    <li><a href="#gallery" data-en="Gallery" data-od="ଚିତ୍ରକୋଷ">Gallery</a></li>
     <li><a href="#vision" data-en="Vision" data-od="ଦୃଷ୍ଟିଭଙ୍ଗୀ">Vision</a></li>
     <li><a href="#journey" data-en="Journey" data-od="ଯାତ୍ରା">Journey</a></li>
     <li><a href="#achievements" data-en="Achievements" data-od="ସଫଳତା">Achievements</a></li>
@@ -432,6 +444,7 @@ footer{background:var(--ink2);}
 <!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
   <a href="#about" onclick="closeMenu()" data-en="About" data-od="ପରିଚୟ">About</a>
+  <a href="#gallery" onclick="closeMenu()" data-en="Gallery" data-od="ଚିତ୍ରକୋଷ">Gallery</a>
   <a href="#vision" onclick="closeMenu()" data-en="Vision" data-od="ଦୃଷ୍ଟିଭଙ୍ଗୀ">Vision</a>
   <a href="#journey" onclick="closeMenu()" data-en="Journey" data-od="ଯାତ୍ରା">Journey</a>
   <a href="#achievements" onclick="closeMenu()" data-en="Achievements" data-od="ସଫଳତା">Achievements</a>
@@ -464,7 +477,7 @@ footer{background:var(--ink2);}
     </div>
 
     <div class="hs-slide" id="slide-1">
-      <div class="hs-bg" style="background-image:url('https://scontent.fbbi5-1.fna.fbcdn.net/v/t39.30808-6/438254577_1002876171396874_4473981075117795974_n.jpg?stp=dst-jpg_tt6&cstp=mx960x640&ctp=s960x640&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xeZUHpvNBrAQ7kNvwE-AAjw&_nc_oc=AdrEr3YTdMB5bC9msa4t_JVg9PsEGNvO1sahJI29e6WUe-IUvv6WIgpPBiWSBD30MV5UGhrYZVLoNbvFH5omXjxS&_nc_zt=23&_nc_ht=scontent.fbbi5-1.fna&_nc_gid=KckkA4Y8ezX7-EOXkJyb4A&_nc_ss=7b2a8&oh=00_Af8flOKnn5Iw3tv7lC4SWoLHuTYuyyVZBsSR5fe4oUgKUA&oe=6A39B3BC');"></div>
+      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/716723012_2157035898204252_8385175063945873812_n_s0f43u.jpg');background-position:center;"></div>
       <div class="hs-overlay"></div>
       <div class="hs-content">
         <div class="hs-chip" data-en="Grassroots Leadership · Community First" data-od="ଭିତ୍ତିସ୍ତର ନେତୃତ୍ୱ · ଲୋକଙ୍କ ଆଗୀ">Grassroots Leadership · Community First</div>
@@ -478,7 +491,7 @@ footer{background:var(--ink2);}
     </div>
 
     <div class="hs-slide" id="slide-2">
-      <div class="hs-bg" style="background-image:url('https://scontent.fbbi5-1.fna.fbcdn.net/v/t39.30808-6/438254577_1002876171396874_4473981075117795974_n.jpg?stp=dst-jpg_tt6&cstp=mx960x640&ctp=s960x640&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xeZUHpvNBrAQ7kNvwE-AAjw&_nc_oc=AdrEr3YTdMB5bC9msa4t_JVg9PsEGNvO1sahJI29e6WUe-IUvv6WIgpPBiWSBD30MV5UGhrYZVLoNbvFH5omXjxS&_nc_zt=23&_nc_ht=scontent.fbbi5-1.fna&_nc_gid=KckkA4Y8ezX7-EOXkJyb4A&_nc_ss=7b2a8&oh=00_Af8flOKnn5Iw3tv7lC4SWoLHuTYuyyVZBsSR5fe4oUgKUA&oe=6A39B3BC');"></div>
+      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1781785151/721778522_1025384616541962_1323859806097042015_n_rrlaah.jpg');background-position:center;"></div>
       <div class="hs-overlay"></div>
       <div class="hs-content">
         <div class="hs-chip" data-en="Development Focus · 2024 – Present" data-od="ବିକାଶ ଲକ୍ଷ୍ୟ · 2024 – ବର୍ତ୍ତମାନ">Development Focus · 2024 – Present</div>
@@ -550,7 +563,7 @@ footer{background:var(--ink2);}
   </div>
   <div class="wrap">
     <div class="ab-imgs rv">
-      <img src="https://res.cloudinary.com/dxmdcoca3/image/upload/v1781782756/6782b62f-bbb3-48d4-b5b6-015c7a96192c_1_i3ewya.png" alt="Rupu Bhatra" class="ab-img-main">
+      <img src="https://assembly.odisha.gov.in/images/MemberofAssembly/Shri%20Rupu%20Bhatra.jpg" alt="Rupu Bhatra" class="ab-img-main">
       <div class="ab-flag"><span></span><span></span><span></span></div>
       <div class="wiki-card">
         <div class="wiki-card-title" data-en="🏛️ Official Record" data-od="🏛️ ଆଧିକାରିକ ତଥ୍ୟ">🏛️ Official Record</div>
@@ -573,6 +586,32 @@ footer{background:var(--ink2);}
         <div class="ab-fact"><div class="ab-k" data-en="Vote Share" data-od="ଭୋଟ ଅଂଶ">Vote Share</div><div class="ab-v" data-en="75,275 Votes" data-od="75,275 ଭୋଟ">75,275 Votes</div></div>
         <div class="ab-fact"><div class="ab-k" data-en="Predecessor" data-od="ପୂର୍ବବର୍ତ୍ତୀ ବିଧାୟକ">Predecessor</div><div class="ab-v" data-en="Padmini Dian" data-od="ପଦ୍ମିନୀ ଦିଆନ">Padmini Dian</div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="s">
+  <div class="s-hd rv">
+    <div class="lbl" data-en="Photo Gallery" data-od="ଫଟୋ ଗ୍ୟାଲେରୀ">Photo Gallery</div>
+    <h2 class="sh" data-en="Community <span class='ac'>Moments</span>" data-od="ସମୁଦାୟ <span class='ac'>ମୁହୂର୍ତ୍ତ</span>">Community <span class="ac">Moments</span></h2>
+    <p class="ss" data-en="Connecting with Kotpad through service, engagement, and leadership." data-od="ସେବା, ସମ୍ପୃକ୍ତି ଏବଂ ନେତୃତ୍ୱ ମାଧ୍ୟମରେ କୋଟପାଦ ସହ ସଂଯୁକ୍ତ।">Connecting with Kotpad through service, engagement, and leadership.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item rv">
+      <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/716723012_2157035898204252_8385175063945873812_n_s0f43u.jpg" alt="Community engagement 1">
+    </div>
+    <div class="gallery-item rv d1">
+      <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/717457788_988277120590134_8977620640252147287_n_bhqwb0.jpg" alt="Community engagement 2">
+    </div>
+    <div class="gallery-item rv d2">
+      <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/716788714_2245076996252431_6715940477580812733_n_wittiv.jpg" alt="Community engagement 3">
+    </div>
+    <div class="gallery-item rv d3">
+      <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1781785151/721778522_1025384616541962_1323859806097042015_n_rrlaah.jpg" alt="Community engagement 4">
+    </div>
+    <div class="gallery-item rv">
+      <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1781785150/723895793_2517873585332082_5428381847361304848_n_erlfso.jpg" alt="Community engagement 5">
     </div>
   </div>
 </section>
@@ -722,6 +761,7 @@ footer{background:var(--ink2);}
       <div class="fc-t" data-en="Quick Links" data-od="ତ୍ୱରିତ ଲିଙ୍କ">Quick Links</div>
       <ul class="fl-links">
         <li><a href="#about" data-en="About" data-od="ପରିଚୟ">About</a></li>
+        <li><a href="#gallery" data-en="Gallery" data-od="ଚିତ୍ରକୋଷ">Gallery</a></li>
         <li><a href="#vision" data-en="Vision & Agenda" data-od="ଦୃଷ୍ଟିଭଙ୍ଗୀ ଏବଂ ଏଜେଣ୍ଡା">Vision & Agenda</a></li>
         <li><a href="#journey" data-en="Political Journey" data-od="ରାଜନୈତିକ ଯାତ୍ରା">Political Journey</a></li>
         <li><a href="#achievements" data-en="Achievements" data-od="ସଫଳତା">Achievements</a></li>
