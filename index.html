@@ -177,6 +177,65 @@ nav.up{box-shadow:0 2px 24px rgba(0,0,0,0.08);}
 .gallery-item::after{content:'';position:absolute;inset:0;background:rgba(255,106,0,.1);opacity:0;transition:opacity .3s;}
 .gallery-item:hover::after{opacity:1;}
 
+/* Gallery Tabs Styling */
+.gallery-tab {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.7rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--mid);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.gallery-tab:hover {
+  color: var(--fire);
+}
+
+.gallery-tab.active {
+  color: var(--fire);
+  font-weight: 700;
+}
+
+.gallery-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--fire);
+}
+
+.gallery-section {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-section.active {
+  display: block !important;
+}
+
+.gallery-item iframe {
+  width: 100%;
+  height: 100%;
+}
+
 /* VISION */
 #vision .vwrap{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;}
 #vision .vright{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
@@ -425,13 +484,13 @@ footer{background:var(--ink2);}
   <div class="et-label"><span class="et-label-icon">📅</span> <span data-en="Upcoming Events" data-od="ଆସନ୍ତା କାର୍ଯ୍ୟକ୍ରମ">Upcoming Events</span></div>
   <div class="et-track-wrap">
     <div class="et-track">
-      <div class="et-item"><span class="et-badge" data-en="Gram Sabha" data-od="ଗ୍ରାମ ସଭା">Gram Sabha</span><span data-en="Village Council Meetings — Ongoing across Kotpad" data-od="ଗାଁ ସଭା ବୈଠକ — କୋଟପାଦ ଜୁଡ଼ା">Village Council Meetings — Ongoing across Kotpad</span></div>
+      <div class="et-item"><span class="et-badge" data-en="Gram Sabha" data-od="ଗ୍ରାମ ସଭା">Gram Sabha</span><span data-en="Village Council Meetings — Ongoing across Kotpad" data-od="ଗାଁ ସଭା ବୈଠକ — କୋଟପାଡ଼ ଜୁଡ଼ା">Village Council Meetings — Ongoing across Kotpad</span></div>
       <span class="et-sep">◆</span>
       <div class="et-item"><span class="et-badge" data-en="Development" data-od="ବିକାଶ">Development</span><span data-en="Infrastructure Projects underway" data-od="ବୁନିୟାଦୀ ଢାଞ୍ଚା ପ୍ରକଳ୍ପ ଚାଲୁଛି">Infrastructure Projects underway</span></div>
       <span class="et-sep">◆</span>
       <div class="et-item"><span class="et-badge" data-en="Jan Sunwai" data-od="ଜନ ସୁନାଣି">Jan Sunwai</span><span data-en="Public Grievance Sessions" data-od="ଜନ ଅଭିଯୋଗ ଶୁଣାଣି">Public Grievance Sessions</span></div>
       <span class="et-sep">◆</span>
-      <div class="et-item"><span class="et-badge" data-en="Gram Sabha" data-od="ଗ୍ରାମ ସଭା">Gram Sabha</span><span data-en="Village Council Meetings — Ongoing across Kotpad" data-od="ଗାଁ ସଭା ବୈଠକ — କୋଟପାଦ ଜୁଡ଼ା">Village Council Meetings — Ongoing across Kotpad</span></div>
+      <div class="et-item"><span class="et-badge" data-en="Gram Sabha" data-od="ଗ୍ରାମ ସଭା">Gram Sabha</span><span data-en="Village Council Meetings — Ongoing across Kotpad" data-od="ଗାଁ ସଭା ବୈଠକ — କୋଟପାଡ଼ ଜୁଡ଼ା">Village Council Meetings — Ongoing across Kotpad</span></div>
       <span class="et-sep">◆</span>
       <div class="et-item"><span class="et-badge" data-en="Development" data-od="ବିକାଶ">Development</span><span data-en="Infrastructure Projects underway" data-od="ବୁନିୟାଦୀ ଢାଞ୍ଚା ପ୍ରକଳ୍ପ ଚାଲୁଛି">Infrastructure Projects underway</span></div>
       <span class="et-sep">◆</span>
@@ -463,11 +522,11 @@ footer{background:var(--ink2);}
     </div>
 
     <div class="hs-slide active" id="slide-0">
-      <div class="hs-bg" style="background-image:url('https://scontent.fbbi5-1.fna.fbcdn.net/v/t39.30808-6/438254577_1002876171396874_4473981075117795974_n.jpg?stp=dst-jpg_tt6&cstp=mx960x640&ctp=s960x640&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xeZUHpvNBrAQ7kNvwE-AAjw&_nc_oc=AdrEr3YTdMB5bC9msa4t_JVg9PsEGNvO1sahJI29e6WUe-IUvv6WIgpPBiWSBD30MV5UGhrYZVLoNbvFH5omXjxS&_nc_zt=23&_nc_ht=scontent.fbbi5-1.fna&_nc_gid=KckkA4Y8ezX7-EOXkJyb4A&_nc_ss=7b2a8&oh=00_Af8flOKnn5Iw3tv7lC4SWoLHuTYuyyVZBsSR5fe4oUgKUA&oe=6A39B3BC');background-position:center;"></div>
+      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/716723012_2157035898204252_8385175063945873812_n_s0f43u.jpg');background-position:center');background-position:center;"></div>
       <div class="hs-overlay"></div>
       <div class="hs-content">
-        <div class="hs-chip" data-en="Member of Legislative Assembly · Kotpad · Odisha" data-od="ବିଧାନସଭ୍ୟ · କୋଟପାଦ · ଓଡ଼ିଶା">Member of Legislative Assembly · Kotpad · Odisha</div>
-        <h1 class="hs-heading" data-en="Kotpad's <br><span class='accent'>Voice,</span><br>Always First." data-od="କୋଟପାଦର <br><span class='accent'>ଶକ୍ତି,</span><br>ସର୍ବଦା।">Kotpad's <br><span class="accent">Voice,</span><br>Always First.</h1>
+        <div class="hs-chip" data-en="Member of Legislative Assembly · Kotpad · Odisha" data-od="ବିଧାନସଭ୍ୟ · କୋଟପାଡ଼ · ଓଡ଼ିଶା">Member of Legislative Assembly · Kotpad · Odisha</div>
+        <h1 class="hs-heading" data-en="Kotpad's <br><span class='accent'>Voice,</span><br>Always First." data-od="କୋଟପାଡ଼ର <br><span class='accent'>ଶକ୍ତି,</span><br>ସର୍ବଦା।">Kotpad's <br><span class="accent">Voice,</span><br>Always First.</h1>
         <p class="hs-sub" data-en="Dedicated MLA championing grassroots development. Elected with 75,275 votes in June 2024." data-od="ଭିତ୍ତିସ୍ତର ବିକାଶରେ ନିଯୁକ୍ତ ବିଧାୟକ। ଜୁନ 2024ରେ 75,275 ଭୋଟରେ ନିର୍ବାଚିତ।">Dedicated MLA championing grassroots development. Elected with 75,275 votes in June 2024.</p>
         <div class="hs-actions">
           <a href="#vision" class="hs-btn-primary" data-en="Explore Vision →" data-od="ଦୃଷ୍ଟିଭଙ୍ଗୀ ଦେଖନ୍ତୁ →">Explore Vision →</a>
@@ -477,12 +536,12 @@ footer{background:var(--ink2);}
     </div>
 
     <div class="hs-slide" id="slide-1">
-      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/716723012_2157035898204252_8385175063945873812_n_s0f43u.jpg');background-position:center;"></div>
+      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1782219955/725861496_2216303605594699_3204381234277858154_n_mjl9ls.jpg;"></div>
       <div class="hs-overlay"></div>
       <div class="hs-content">
         <div class="hs-chip" data-en="Grassroots Leadership · Community First" data-od="ଭିତ୍ତିସ୍ତର ନେତୃତ୍ୱ · ଲୋକଙ୍କ ଆଗୀ">Grassroots Leadership · Community First</div>
         <h1 class="hs-heading" data-en="People<br><span class='accent'>Before</span><br>Politics." data-od="ଲୋକମାନେ<br><span class='accent'>ପ୍ରଥମେ,</span><br>ସଦା।">People<br><span class="accent">Before</span><br>Politics.</h1>
-        <p class="hs-sub" data-en="Every decision focuses on Kotpad's farmers, students, and families." data-od="ପ୍ରତ୍ୟେକ ନିଷ୍ପତ୍ତି କୋଟପାଦର ନାଗରିକଙ୍କ ଉପରେ କେନ୍ଦ୍ରିତ।">Every decision focuses on Kotpad's farmers, students, and families.</p>
+        <p class="hs-sub" data-en="Every decision focuses on Kotpad's farmers, students, and families." data-od="ପ୍ରତ୍ୟେକ ନିଷ୍ପତ୍ତି କୋଟପାଡ଼ର ନାଗରିକଙ୍କ ଉପରେ କେନ୍ଦ୍ରିତ।">Every decision focuses on Kotpad's farmers, students, and families.</p>
         <div class="hs-actions">
           <a href="#about" class="hs-btn-primary" data-en="Know More →" data-od="ଅଧିକ ଜାଣନ୍ତୁ →">Know More →</a>
           <a href="#journey" class="hs-btn-ghost" data-en="Political Journey" data-od="ରାଜନୈତିକ ଯାତ୍ରା">Political Journey</a>
@@ -495,7 +554,7 @@ footer{background:var(--ink2);}
       <div class="hs-overlay"></div>
       <div class="hs-content">
         <div class="hs-chip" data-en="Development Focus · 2024 – Present" data-od="ବିକାଶ ଲକ୍ଷ୍ୟ · 2024 – ବର୍ତ୍ତମାନ">Development Focus · 2024 – Present</div>
-        <h1 class="hs-heading" data-en="Building a <br><span class='accent'>Stronger</span><br>Kotpad." data-od="ଶକ୍ତିଶାଳୀ <br><span class='accent'>କୋଟପାଦ</span><br>ଗଡ଼ୁଛୁ।">Building a <br><span class="accent">Stronger</span><br>Kotpad.</h1>
+        <h1 class="hs-heading" data-en="Building a <br><span class='accent'>Stronger</span><br>Kotpad." data-od="ଶକ୍ତିଶାଳୀ <br><span class='accent'>କୋଟପାଡ଼</span><br>ଗଡ଼ୁଛୁ।">Building a <br><span class="accent">Stronger</span><br>Kotpad.</h1>
         <p class="hs-sub" data-en="Roads, electricity, health centers, education — promises delivered on the ground." data-od="ରାସ୍ତା, ବିଦ୍ୟୁତ୍, ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର, ଶିକ୍ଷା — ମାଟିରେ ପୁରଣ ହୋଇଥିବା।">Roads, electricity, health centers, education — promises delivered on the ground.</p>
         <div class="hs-actions">
           <a href="#achievements" class="hs-btn-primary" data-en="Track Record →" data-od="ସଫଳତାର ରେକର୍ଡ →">Track Record →</a>
@@ -505,12 +564,12 @@ footer{background:var(--ink2);}
     </div>
 
     <div class="hs-slide" id="slide-3">
-      <div class="hs-bg" style="background-image:url('https://scontent.fbbi5-1.fna.fbcdn.net/v/t39.30808-6/438254577_1002876171396874_4473981075117795974_n.jpg?stp=dst-jpg_tt6&cstp=mx960x640&ctp=s960x640&_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xeZUHpvNBrAQ7kNvwE-AAjw&_nc_oc=AdrEr3YTdMB5bC9msa4t_JVg9PsEGNvO1sahJI29e6WUe-IUvv6WIgpPBiWSBD30MV5UGhrYZVLoNbvFH5omXjxS&_nc_zt=23&_nc_ht=scontent.fbbi5-1.fna&_nc_gid=KckkA4Y8ezX7-EOXkJyb4A&_nc_ss=7b2a8&oh=00_Af8flOKnn5Iw3tv7lC4SWoLHuTYuyyVZBsSR5fe4oUgKUA&oe=6A39B3BC');"></div>
+      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1782219955/725861496_2216303605594699_3204381234277858154_n_mjl9ls.jpg');"></div>
       <div class="hs-overlay"></div>
       <div class="hs-content">
         <div class="hs-chip" data-en="Service · Transparency · Progress" data-od="ସେବା · ସ୍ୱଚ୍ଛତା · ପ୍ରଗତି">Service · Transparency · Progress</div>
         <h1 class="hs-heading" data-en="Rooted in<br><span class='accent'>Service,</span><br>Driven by Trust." data-od="ସେବାରେ<br><span class='accent'>ମୂଳଗାଢ଼,</span><br>ବିଶ୍ୱାସରେ।">Rooted in<br><span class="accent">Service,</span><br>Driven by Trust.</h1>
-        <p class="hs-sub" data-en="Community engagement and commitment to Kotpad's development." data-od="ସମୁଦାୟ ସମ୍ପୃକ୍ତି ଏବଂ କୋଟପାଦର ବିକାଶରେ ନିଷ୍ଠା।">Community engagement and commitment to Kotpad's development.</p>
+        <p class="hs-sub" data-en="Community engagement and commitment to Kotpad's development." data-od="ସମୁଦାୟ ସମ୍ପୃକ୍ତି ଏବଂ କୋଟପାଡ଼ର ବିକାଶରେ ନିଷ୍ଠା।">Community engagement and commitment to Kotpad's development.</p>
         <div class="hs-actions">
           <a href="#contact" class="hs-btn-primary" data-en="Write to Us →" data-od="ଆମକୁ ଲେଖନ୍ତୁ →">Write to Us →</a>
           <a href="#press" class="hs-btn-ghost" data-en="In The News" data-od="ସମ୍ବାଦରେ">In The News</a>
@@ -537,7 +596,7 @@ footer{background:var(--ink2);}
       <span class="hs-dot-m">·</span>
       <div class="hs-item"><span class="hs-n">2024</span><span class="hs-l" data-en="Elected" data-od="ନିର୍ବାଚିତ">Elected</span></div>
       <span class="hs-dot-m">·</span>
-      <div class="hs-item"><span class="hs-n" data-en="Kotpad First" data-od="କୋଟପାଦ ଆଗୀ">Kotpad First</span><span class="hs-l" data-en="Always" data-od="ସର୍ବଦା">Always</span></div>
+      <div class="hs-item"><span class="hs-n" data-en="Kotpad First" data-od="କୋଟପାଡ଼ ଆଗୀ">Kotpad First</span><span class="hs-l" data-en="Always" data-od="ସର୍ବଦା">Always</span></div>
       <span class="hs-dot-m">·</span>
       <div class="hs-item"><span class="hs-n">BJP</span><span class="hs-l" data-en="Member" data-od="ସଦସ୍ୟ">Member</span></div>
       <span class="hs-dot-m">·</span>
@@ -547,7 +606,7 @@ footer{background:var(--ink2);}
       <span class="hs-dot-m">·</span>
       <div class="hs-item"><span class="hs-n">2024</span><span class="hs-l" data-en="Elected" data-od="ନିର୍ବାଚିତ">Elected</span></div>
       <span class="hs-dot-m">·</span>
-      <div class="hs-item"><span class="hs-n" data-en="Kotpad First" data-od="କୋଟପାଦ ଆଗୀ">Kotpad First</span><span class="hs-l" data-en="Always" data-od="ସର୍ବଦା">Always</span></div>
+      <div class="hs-item"><span class="hs-n" data-en="Kotpad First" data-od="କୋଟପାଡ଼ ଆଗୀ">Kotpad First</span><span class="hs-l" data-en="Always" data-od="ସର୍ବଦା">Always</span></div>
       <span class="hs-dot-m">·</span>
       <div class="hs-item"><span class="hs-n">BJP</span><span class="hs-l" data-en="Member" data-od="ସଦସ୍ୟ">Member</span></div>
       <span class="hs-dot-m">·</span>
@@ -567,19 +626,19 @@ footer{background:var(--ink2);}
       <div class="ab-flag"><span></span><span></span><span></span></div>
       <div class="wiki-card">
         <div class="wiki-card-title" data-en="🏛️ Official Record" data-od="🏛️ ଆଧିକାରିକ ତଥ୍ୟ">🏛️ Official Record</div>
-        <div class="wiki-row"><span class="wiki-k" data-en="Position" data-od="ପଦବୀ">Position</span><span class="wiki-v" data-en="MLA, Kotpad" data-od="ବିଧାୟକ, କୋଟପାଦ">MLA, Kotpad</span></div>
+        <div class="wiki-row"><span class="wiki-k" data-en="Position" data-od="ପଦବୀ">Position</span><span class="wiki-v" data-en="MLA, Kotpad" data-od="ବିଧାୟକ, କୋଟପାଡ଼">MLA, Kotpad</span></div>
         <div class="wiki-row"><span class="wiki-k" data-en="Assumed Office" data-od="ଦାୟିତ୍ୱ ଗ୍ରହଣ">Assumed Office</span><span class="wiki-v" data-en="4 June 2024" data-od="4 ଜୁନ 2024">4 June 2024</span></div>
         <div class="wiki-row"><span class="wiki-k" data-en="Party" data-od="ଦଳ">Party</span><span class="wiki-v" data-en="BJP" data-od="ବିଜେପି">BJP</span></div>
         <div class="wiki-row"><span class="wiki-k" data-en="Legislature" data-od="ବିଧାନମଣ୍ଡଳ">Legislature</span><span class="wiki-v" data-en="Odisha Assembly" data-od="ଓଡ଼ିଶା ବିଧାନସଭା">Odisha Assembly</span></div>
       </div>
     </div>
     <div class="ab-right rv">
-      <p class="ab-quote" data-en="&quot;Service to the people of Kotpad is not just my duty—it is my passion and my purpose.&quot;" data-od="&quot;କୋଟପାଦର ଲୋକମାନଙ୍କ ସେବା ମୋର କର୍ତ୍ତବ୍ୟ ନୁହେଁ—ଏହା ମୋର ଆବେଗ ଏବଂ ଉଦ୍ଦେଶ୍ୟ।&quot;">"Service to the people of Kotpad is not just my duty—it is my passion and my purpose."</p>
-      <p class="ab-body" data-en="Rupu Bhatra is an Indian politician elected to the Odisha Legislative Assembly from Kotpad in 2024. He assumes office on 4 June 2024, succeeding Padmini Dian." data-od="ରୁପୁ ଭାତ୍ରା ଜଣେ ଭାରତୀୟ ରାଜନେତା ଯିଏ 2024ରେ କୋଟପାଦରୁ ଓଡ଼ିଶା ବିଧାନସଭାକୁ ନିର୍ବାଚିତ ହୋଇଥିଲେ। ସେ 4 ଜୁନ 2024ରେ ପଦଭାର ଗ୍ରହଣ କରିଥିଲେ।">Rupu Bhatra is an Indian politician elected to the Odisha Legislative Assembly from Kotpad in 2024. He assumes office on 4 June 2024, succeeding Padmini Dian.</p>
+      <p class="ab-quote" data-en="&quot;Service to the people of Kotpad is not just my duty—it is my passion and my purpose.&quot;" data-od="&quot;କୋଟପାଡ଼ର ଲୋକମାନଙ୍କ ସେବା ମୋର କର୍ତ୍ତବ୍ୟ ନୁହେଁ—ଏହା ମୋର ଆବେଗ ଏବଂ ଉଦ୍ଦେଶ୍ୟ।&quot;">"Service to the people of Kotpad is not just my duty—it is my passion and my purpose."</p>
+      <p class="ab-body" data-en="Rupu Bhatra is an Indian politician elected to the Odisha Legislative Assembly from Kotpad in 2024. He assumes office on 4 June 2024, succeeding Padmini Dian." data-od="ରୁପୁ ଭାତ୍ରା ଜଣେ ଭାରତୀୟ ରାଜନେତା ଯିଏ 2024ରେ କୋଟପାଡ଼ରୁ ଓଡ଼ିଶା ବିଧାନସଭାକୁ ନିର୍ବାଚିତ ହୋଇଥିଲେ। ସେ 4 ଜୁନ 2024ରେ ପଦଭାର ଗ୍ରହଣ କରିଥିଲେ।">Rupu Bhatra is an Indian politician elected to the Odisha Legislative Assembly from Kotpad in 2024. He assumes office on 4 June 2024, succeeding Padmini Dian.</p>
       <p class="ab-body" data-en="With commitment to grassroots development, Rupu focuses on rural infrastructure, agricultural support, healthcare, and education." data-od="ଭିତ୍ତିସ୍ତର ବିକାଶରେ ଯୁକ୍ତ ରୁପୁ ଗ୍ରାମୀଣ ବୁନିୟାଦୀ ଢାଞ୍ଚା, ଜାତୀୟ ସମର୍ଥନ, ସ୍ୱାସ୍ଥ୍ୟ ଏବଂ ଶିକ୍ଷାରେ ମନୋଯୋଗ କରନ୍ତି।">With commitment to grassroots development, Rupu focuses on rural infrastructure, agricultural support, healthcare, and education.</p>
       <p class="ab-body" data-en="Known for direct community engagement, he maintains regular contact with constituents and personally oversees development schemes." data-od="ସରାସରି ସମୁଦାୟ ସମ୍ପୃକ୍ତିର ଜନ୍ୟ ପରିଚିତ, ସେ ନିୟମିତ ଭାବରେ ନିର୍ବାଚିତଙ୍କ ସହ ଯୋଗାଯୋଗ କରନ୍ତି ଏବଂ ବିକାଶ ଯୋଜନାର ତଦାରଖ କରନ୍ତି।">Known for direct community engagement, he maintains regular contact with constituents and personally oversees development schemes.</p>
       <div class="ab-grid">
-        <div class="ab-fact"><div class="ab-k" data-en="Constituency" data-od="ନିର୍ବାଚନମଣ୍ଡଳୀ">Constituency</div><div class="ab-v" data-en="Kotpad, Odisha" data-od="କୋଟପାଦ, ଓଡ଼ିଶା">Kotpad, Odisha</div></div>
+        <div class="ab-fact"><div class="ab-k" data-en="Constituency" data-od="ନିର୍ବାଚନମଣ୍ଡଳୀ">Constituency</div><div class="ab-v" data-en="Kotpad, Odisha" data-od="କୋଟପାଡ଼, ଓଡ଼ିଶା">Kotpad, Odisha</div></div>
         <div class="ab-fact"><div class="ab-k" data-en="Position" data-od="ପଦବୀ">Position</div><div class="ab-v" data-en="Member of Assembly" data-od="ବିଧାନସଭ୍ୟ">Member of Assembly</div></div>
         <div class="ab-fact"><div class="ab-k" data-en="Party" data-od="ଦଳ">Party</div><div class="ab-v" data-en="Bharatiya Janata Party" data-od="ଭାରତୀୟ ଜନତା ପାର୍ଟି">Bharatiya Janata Party</div></div>
         <div class="ab-fact"><div class="ab-k" data-en="Elected" data-od="ନିର୍ବାଚିତ">Elected</div><div class="ab-v" data-en="2024 Odisha Elections" data-od="2024 ଓଡ଼ିଶା ନିର୍ବାଚନ">2024 Odisha Elections</div></div>
@@ -593,25 +652,59 @@ footer{background:var(--ink2);}
 <!-- GALLERY -->
 <section id="gallery" class="s">
   <div class="s-hd rv">
-    <div class="lbl" data-en="Photo Gallery" data-od="ଫଟୋ ଗ୍ୟାଲେରୀ">Photo Gallery</div>
+    <div class="lbl" data-en="Media Gallery" data-od="ମିଡିଆ ଗ୍ୟାଲେରୀ">Media Gallery</div>
     <h2 class="sh" data-en="Community <span class='ac'>Moments</span>" data-od="ସମୁଦାୟ <span class='ac'>ମୁହୂର୍ତ୍ତ</span>">Community <span class="ac">Moments</span></h2>
-    <p class="ss" data-en="Connecting with Kotpad through service, engagement, and leadership." data-od="ସେବା, ସମ୍ପୃକ୍ତି ଏବଂ ନେତୃତ୍ୱ ମାଧ୍ୟମରେ କୋଟପାଦ ସହ ସଂଯୁକ୍ତ।">Connecting with Kotpad through service, engagement, and leadership.</p>
+    <p class="ss" data-en="Connecting with Kotpad through service, engagement, and leadership." data-od="ସେବା, ସମ୍ପୃକ୍ତି ଏବଂ ନେତୃତ୍ୱ ମାଧ୍ୟମରେ କୋଟପାଡ଼ ସହ ସଂଯୁକ୍ତ।">Connecting with Kotpad through service, engagement, and leadership.</p>
   </div>
-  <div class="gallery-grid">
-    <div class="gallery-item rv">
-      <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/716723012_2157035898204252_8385175063945873812_n_s0f43u.jpg" alt="Community engagement 1">
+  
+  <!-- Gallery Tabs -->
+  <div style="display:flex;gap:1rem;margin-bottom:2rem;border-bottom:2px solid var(--border);">
+    <button class="gallery-tab active" onclick="switchGalleryTab('photos')" data-en="📷 Photos" data-od="📷 ଫଟୋ">📷 Photos</button>
+    <button class="gallery-tab" onclick="switchGalleryTab('videos')" data-en="▶️ Videos" data-od="▶️ ଭିଡିଓ">▶️ Videos</button>
+  </div>
+
+  <!-- Photos Tab -->
+  <div id="photos-tab" class="gallery-section active">
+    <div class="gallery-grid">
+      <div class="gallery-item rv">
+        <img src="https://scontent.fbbi1-2.fna.fbcdn.net/v/t39.99422-6/728469115_1044086498139878_3835440181811159516_n.png?stp=dst-jpg_tt6&cstp=mx1600x1200&ctp=s1600x1200&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3d92lr82ZMAQ7kNvwE5Ki8V&_nc_oc=AdqziPrCU2M2xOkbW4zLXNDFLWXZt5CzR67l2izdYaGATeI-nJn0PrNW-9QPkqagDVcZCL6MB3EhLwM6hoZjaULe&_nc_zt=14&_nc_ht=scontent.fbbi1-2.fna&_nc_gid=aRM6-lpafk8kVbceM2aonQ&_nc_ss=7b2a8&oh=00_Af-A8kNCycrEG-__gZa8T0ZgDTxN8TpQsNBE8MtUK5eKyQ&oe=6A40511A" alt="Community engagement 1">
+      </div>
+
+
+
+      <div class="gallery-item rv">
+        <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1782219955/725861496_2216303605594699_3204381234277858154_n_mjl9ls.jpg" alt="Community event 5">
+      </div>
+      <div class="gallery-item rv d1">
+        <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1782219955/730196929_1578042760510768_321204183132683203_n_tazhyl.jpg" alt="Community event 6">
+      </div>
+      <div class="gallery-item rv d2">
+        <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1782219955/726145426_1015807017582473_6976248549872998308_n_irffgz.jpg" alt="Community event 7">
+      </div>
+      <div class="gallery-item rv d3">
+        <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1782219955/729139479_1559658272403286_1767276474802944312_n_uerftt.jpg" alt="Community event 8">
+      </div>
+      <div class="gallery-item rv">
+        <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1782219955/726002152_897533466700120_6478719165829260438_n_rpsfg8.jpg" alt="Community event 9">
+      </div>
     </div>
-    <div class="gallery-item rv d1">
-      <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/717457788_988277120590134_8977620640252147287_n_bhqwb0.jpg" alt="Community engagement 2">
-    </div>
-    <div class="gallery-item rv d2">
-      <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/716788714_2245076996252431_6715940477580812733_n_wittiv.jpg" alt="Community engagement 3">
-    </div>
-    <div class="gallery-item rv d3">
-      <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1781785151/721778522_1025384616541962_1323859806097042015_n_rrlaah.jpg" alt="Community engagement 4">
-    </div>
-    <div class="gallery-item rv">
-      <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1781785150/723895793_2517873585332082_5428381847361304848_n_erlfso.jpg" alt="Community engagement 5">
+  </div>
+
+  <!-- Videos Tab -->
+  <div id="videos-tab" class="gallery-section" style="display:none;">
+    <div class="gallery-grid">
+      <div class="gallery-item rv" style="position:relative;overflow:hidden;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_R5gmS4bz4c" title="Kotpad MLA 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;"></iframe>
+      </div>
+      <div class="gallery-item rv d1" style="position:relative;overflow:hidden;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ixQn2V7VEpI" title="Kotpad Development" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;"></iframe>
+      </div>
+      <div class="gallery-item rv d2" style="position:relative;overflow:hidden;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dGCRknPbv6A" title="Community Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;"></iframe>
+      </div>
+      <div class="gallery-item rv d3" style="position:relative;overflow:hidden;">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/evRxI3fZ9VQ" title="Kotpad Updates" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;"></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -622,7 +715,7 @@ footer{background:var(--ink2);}
     <div class="vleft rv">
       <div>
         <div class="lbl" data-en="Our Vision" data-od="ଆମର ଦୃଷ୍ଟିଭଙ୍ଗୀ">Our Vision</div>
-        <h2 class="sh" data-en="Building a <span class='ac'>Stronger</span> Kotpad" data-od="ଶକ୍ତିଶାଳୀ <span class='ac'>କୋଟପାଦ</span> ଗଡ଼ିବା">Building a <span class="ac">Stronger</span> Kotpad</h2>
+        <h2 class="sh" data-en="Building a <span class='ac'>Stronger</span> Kotpad" data-od="ଶକ୍ତିଶାଳୀ <span class='ac'>କୋଟପାଡ଼</span> ଗଡ଼ିବା">Building a <span class="ac">Stronger</span> Kotpad</h2>
         <p class="ss" data-en="Five pillars guiding every decision and initiative for Kotpad's people." data-od="ପାଞ୍ଚଟି ସ୍ତମ୍ଭ ଯାହା ପ୍ରତ୍ୟେକ ନିଷ୍ପତ୍ତି ଦିଇଛି।">Five pillars guiding every decision and initiative for Kotpad's people.</p>
       </div>
     </div>
@@ -649,11 +742,11 @@ footer{background:var(--ink2);}
       <img src="https://res.cloudinary.com/dxmdcoca3/image/upload/v1781782739/6f566f92-362b-4143-988d-55efee5b3c0f_1_ejvyv4.png" alt="Rupu Bhatra" class="jl-img">
     </div>
     <div class="jright">
-      <div class="je rv"><div class="je-yr" data-en="Roots" data-od="ମୂଳ">Roots</div><div><div class="je-title" data-en="Community Leadership in Kotpad" data-od="କୋଟପାଦରେ ସମୁଦାୟ ନେତୃତ୍ୱ">Community Leadership in Kotpad</div><p class="je-desc" data-en="Built connections with farmers, workers, and families across Kotpad through grassroots work." data-od="ଭିତ୍ତିସ୍ତର କାର୍ଯ୍ୟ ମାଧ୍ୟମରେ କୋଟପାଦରେ ସମ୍ପର୍କ ଗଢ଼ିଥିଲେ।">Built connections with farmers, workers, and families across Kotpad through grassroots work.</p></div></div>
+      <div class="je rv"><div class="je-yr" data-en="Roots" data-od="ମୂଳ">Roots</div><div><div class="je-title" data-en="Community Leadership in Kotpad" data-od="କୋଟପାଡ଼ରେ ସମୁଦାୟ ନେତୃତ୍ୱ">Community Leadership in Kotpad</div><p class="je-desc" data-en="Built connections with farmers, workers, and families across Kotpad through grassroots work." data-od="ଭିତ୍ତିସ୍ତର କାର୍ଯ୍ୟ ମାଧ୍ୟମରେ କୋଟପାଡ଼ରେ ସମ୍ପର୍କ ଗଢ଼ିଥିଲେ।">Built connections with farmers, workers, and families across Kotpad through grassroots work.</p></div></div>
       <div class="je rv"><div class="je-yr" data-en="Party" data-od="ଦଳ">Party</div><div><div class="je-title" data-en="Joined Bharatiya Janata Party" data-od="ଭାରତୀୟ ଜନତା ପାର୍ଟିରେ ଯୋଗ">Joined Bharatiya Janata Party</div><p class="je-desc" data-en="Aligned with BJP's vision of development-led governance and worked at ground level." data-od="ବିକାଶ-ଆଧାରିତ ଶାସନର ଦୃଷ୍ଟିଭଙ୍ଗୀ ସହ ମିଶି ମାଠିରେ କାମ କଲେ।">Aligned with BJP's vision of development-led governance and worked at ground level.</p></div></div>
-      <div class="je rv"><div class="je-yr" data-en="2024" data-od="2024">2024</div><div><div class="je-title" data-en="Elected to Odisha Assembly" data-od="ଓଡ଼ିଶା ବିଧାନସଭାକୁ ନିର୍ବାଚିତ">Elected to Odisha Assembly</div><p class="je-desc" data-en="Won Kotpad seat with 75,275 votes—a strong mandate for development." data-od="75,275 ଭୋଟରେ କୋଟପାଦ ଜିତିଥିଲେ—ବିକାଶର ଶକ୍ତିଶାଳୀ ନିର୍ଦେଶ।">Won Kotpad seat with 75,275 votes—a strong mandate for development.</p></div></div>
-      <div class="je rv"><div class="je-yr" data-en="June 4" data-od="ଜୁନ 4">June 4</div><div><div class="je-title" data-en="Assumed Office" data-od="ପଦଭାର ଗ୍ରହଣ">Assumed Office</div><p class="je-desc" data-en="Formally took oath as Member of Odisha Legislative Assembly from Kotpad." data-od="କୋଟପାଦ ଓଡ଼ିଶା ବିଧାନସଭା ଅଂଶୀଦାର ହିସାବରେ ଶପଥ ନେଇଥିଲେ।">Formally took oath as Member of Odisha Legislative Assembly from Kotpad.</p></div></div>
-      <div class="je rv"><div class="je-yr" data-en="Now" data-od="ବର୍ତ୍ତମାନ">Now</div><div><div class="je-title" data-en="Serving Kotpad Daily" data-od="ଦୈନିକ କୋଟପାଦର ସେବା">Serving Kotpad Daily</div><p class="je-desc" data-en="Focused on infrastructure, agriculture, healthcare, and ensuring every scheme reaches all." data-od="ବୁନିୟାଦୀ ଢାଞ୍ଚା, କୃଷି, ସ୍ୱାସ୍ଥ୍ୟ ଏବଂ ସମସ୍ତ ଯୋଜନା ସୁନିଶ୍ଚିତ।">Focused on infrastructure, agriculture, healthcare, and ensuring every scheme reaches all.</p></div></div>
+      <div class="je rv"><div class="je-yr" data-en="2024" data-od="2024">2024</div><div><div class="je-title" data-en="Elected to Odisha Assembly" data-od="ଓଡ଼ିଶା ବିଧାନସଭାକୁ ନିର୍ବାଚିତ">Elected to Odisha Assembly</div><p class="je-desc" data-en="Won Kotpad seat with 75,275 votes—a strong mandate for development." data-od="75,275 ଭୋଟରେ କୋଟପାଡ଼ ଜିତିଥିଲେ—ବିକାଶର ଶକ୍ତିଶାଳୀ ନିର୍ଦେଶ।">Won Kotpad seat with 75,275 votes—a strong mandate for development.</p></div></div>
+      <div class="je rv"><div class="je-yr" data-en="June 4" data-od="ଜୁନ 4">June 4</div><div><div class="je-title" data-en="Assumed Office" data-od="ପଦଭାର ଗ୍ରହଣ">Assumed Office</div><p class="je-desc" data-en="Formally took oath as Member of Odisha Legislative Assembly from Kotpad." data-od="କୋଟପାଡ଼ ଓଡ଼ିଶା ବିଧାନସଭା ଅଂଶୀଦାର ହିସାବରେ ଶପଥ ନେଇଥିଲେ।">Formally took oath as Member of Odisha Legislative Assembly from Kotpad.</p></div></div>
+      <div class="je rv"><div class="je-yr" data-en="Now" data-od="ବର୍ତ୍ତମାନ">Now</div><div><div class="je-title" data-en="Serving Kotpad Daily" data-od="ଦୈନିକ କୋଟପାଡ଼ର ସେବା">Serving Kotpad Daily</div><p class="je-desc" data-en="Focused on infrastructure, agriculture, healthcare, and ensuring every scheme reaches all." data-od="ବୁନିୟାଦୀ ଢାଞ୍ଚା, କୃଷି, ସ୍ୱାସ୍ଥ୍ୟ ଏବଂ ସମସ୍ତ ଯୋଜନା ସୁନିଶ୍ଚିତ।">Focused on infrastructure, agriculture, healthcare, and ensuring every scheme reaches all.</p></div></div>
     </div>
   </div>
 </section>
@@ -665,7 +758,7 @@ footer{background:var(--ink2);}
       <div class="lbl inv" data-en="Track Record" data-od="ସଫଳତାର ଧାରା">Track Record</div>
       <h2 class="sh inv" data-en="Measurable <span class='ac' style='color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3)'>Impact</span>" data-od="ମାପିପାରୋଭୋ <span class='ac' style='color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3)'>ପ୍ରଭାବ</span>">Measurable <span class="ac" style="color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.3)">Impact</span></h2>
     </div>
-    <p class="ss inv" data-en="Rupu Bhatra's record reflects commitment to transforming Kotpad through development." data-od="ରୁପୁଙ୍କ ଧାରା କୋଟପାଦ ରୂପାନ୍ତରିତ କରିବାର ନିଷ୍ଠା ପ୍ରଦର୍ଶନ କରେ।">Rupu Bhatra's record reflects commitment to transforming Kotpad through development.</p>
+    <p class="ss inv" data-en="Rupu Bhatra's record reflects commitment to transforming Kotpad through development." data-od="ରୁପୁଙ୍କ ଧାରା କୋଟପାଡ଼ ରୂପାନ୍ତରିତ କରିବାର ନିଷ୍ଠା ପ୍ରଦର୍ଶନ କରେ।">Rupu Bhatra's record reflects commitment to transforming Kotpad through development.</p>
   </div>
   <div class="i-grid">
     <div class="it rv"><span class="it-icon">✅</span><div class="it-n">75,275</div><div class="it-l" data-en="Votes Received" data-od="ଭୋଟ ଗ୍ରହଣ">Votes Received</div></div>
@@ -674,7 +767,7 @@ footer{background:var(--ink2);}
     <div class="it rv d3"><span class="it-icon">📈</span><div class="it-n">24/7</div><div class="it-l" data-en="Commitment" data-od="ନିବେଦିତତା">Commitment</div></div>
   </div>
   <div class="awards">
-    <div class="aw rv"><span class="aw-icon">🏆</span><div><div class="aw-yr" data-en="2024" data-od="2024">2024</div><div class="aw-t" data-en="Elected MLA — Kotpad, Odisha" data-od="ବିଧାୟକ ନିର୍ବାଚିତ — କୋଟପାଦ, ଓଡ଼ିଶା">Elected MLA — Kotpad, Odisha</div><p class="aw-b" data-en="Won Kotpad assembly seat with 75,275 votes in 2024 as BJP candidate." data-od="2024ରେ ବିଜେପି ପ୍ରାର୍ଥୀ ଭାବେ 75,275 ଭୋଟରେ ଜିତିଥିଲେ।">Won Kotpad assembly seat with 75,275 votes in 2024 as BJP candidate.</p></div></div>
+    <div class="aw rv"><span class="aw-icon">🏆</span><div><div class="aw-yr" data-en="2024" data-od="2024">2024</div><div class="aw-t" data-en="Elected MLA — Kotpad, Odisha" data-od="ବିଧାୟକ ନିର୍ବାଚିତ — କୋଟପାଡ଼, ଓଡ଼ିଶା">Elected MLA — Kotpad, Odisha</div><p class="aw-b" data-en="Won Kotpad assembly seat with 75,275 votes in 2024 as BJP candidate." data-od="2024ରେ ବିଜେପି ପ୍ରାର୍ଥୀ ଭାବେ 75,275 ଭୋଟରେ ଜିତିଥିଲେ।">Won Kotpad assembly seat with 75,275 votes in 2024 as BJP candidate.</p></div></div>
     <div class="aw rv d1"><span class="aw-icon">👥</span><div><div class="aw-yr" data-en="Ongoing" data-od="ଚାଲୁ">Ongoing</div><div class="aw-t" data-en="Community Engagement" data-od="ସମୁଦାୟ ସମ୍ପୃକ୍ତି">Community Engagement</div><p class="aw-b" data-en="Regular village meetings, farmer consultations, and direct community outreach." data-od="ନିୟମିତ ଗାଁ ବୈଠକ, କୃଷକ ପରାମର୍ଶ ଏବଂ ସରାସରି ସମୁଦାୟ ପୌଁଚ।">Regular village meetings, farmer consultations, and direct community outreach.</p></div></div>
     <div class="aw rv d2"><span class="aw-icon">🌱</span><div><div class="aw-yr" data-en="2024-25" data-od="2024-25">2024-25</div><div class="aw-t" data-en="Development Initiatives" data-od="ବିକାଶ ଯୋଜନା">Development Initiatives</div><p class="aw-b" data-en="Infrastructure, agriculture support, health centers, and educational programs implementation." data-od="ବୁନିୟାଦୀ ଢାଞ୍ଚା, କୃଷି ସମର୍ଥନ, ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର ଏବଂ ଶିକ୍ଷା।">Infrastructure, agriculture support, health centers, and educational programs implementation.</p></div></div>
   </div>
@@ -685,10 +778,10 @@ footer{background:var(--ink2);}
   <div class="s-hd rv">
     <div class="lbl" data-en="In The News" data-od="ସମ୍ବାଦରେ">In The News</div>
     <h2 class="sh" data-en="Media <span class='ac'>Coverage</span>" data-od="ମିଡ଼ିଆ <span class='ac'>ଖବର</span>">Media <span class="ac">Coverage</span></h2>
-    <p class="ss" data-en="What Odisha's media outlets say about Rupu Bhatra and Kotpad's development." data-od="ଓଡ଼ିଶା ମିଡ଼ିଆ ରୁପୁ ଏବଂ କୋଟପାଦ ବିକାଶ ବିଷୟରେ କୀ କହୁଛି।">What Odisha's media outlets say about Rupu Bhatra and Kotpad's development.</p>
+    <p class="ss" data-en="What Odisha's media outlets say about Rupu Bhatra and Kotpad's development." data-od="ଓଡ଼ିଶା ମିଡ଼ିଆ ରୁପୁ ଏବଂ କୋଟପାଡ଼ ବିକାଶ ବିଷୟରେ କୀ କହୁଛି।">What Odisha's media outlets say about Rupu Bhatra and Kotpad's development.</p>
   </div>
   <div class="playout">
-    <div class="pc big rv"><div><div class="pc-src" data-en="News18" data-od="News18">News18</div><div class="pc-hl" data-en="Kotpad Election Results 2024: Rupu Bhatra of BJP Wins with Strong Mandate" data-od="କୋଟପାଦ ନିର୍ବାଚନ ଫଳାଫଳ 2024: ରୁପୁ ଭାତ୍ରା ଜିତିଥିଲେ">Kotpad Election Results 2024: Rupu Bhatra of BJP Wins with Strong Mandate</div></div><div class="pc-dt" data-en="June 2024" data-od="ଜୁନ 2024">June 2024</div></div>
+    <div class="pc big rv"><div><div class="pc-src" data-en="News18" data-od="News18">News18</div><div class="pc-hl" data-en="Kotpad Election Results 2024: Rupu Bhatra of BJP Wins with Strong Mandate" data-od="କୋଟପାଡ଼ ନିର୍ବାଚନ ଫଳାଫଳ 2024: ରୁପୁ ଭାତ୍ରା ଜିତିଥିଲେ">Kotpad Election Results 2024: Rupu Bhatra of BJP Wins with Strong Mandate</div></div><div class="pc-dt" data-en="June 2024" data-od="ଜୁନ 2024">June 2024</div></div>
     <div class="pc rv"><div class="pc-src" data-en="Odisha News" data-od="ଓଡ଼ିଶା ନ୍ୟୁଜ">Odisha News</div><div class="pc-hl" data-en="New MLA Promises Transparent Governance" data-od="ନୂତନ ବିଧାୟକ ସ୍ୱଚ୍ଛ ଶାସନ ପ୍ରତିଶ୍ରୁତି">New MLA Promises Transparent Governance</div><div class="pc-dt" data-en="June 2024" data-od="ଜୁନ 2024">June 2024</div></div>
     <div class="pc rv d1"><div class="pc-src" data-en="Election Commission" data-od="ନିର୍ବାଚନ ଆୟୋଗ">Election Commission</div><div class="pc-hl" data-en="Rupu Bhatra Verified as Kotpad MLA" data-od="ରୁପୁ ବିଧାୟକ ଭାବେ ଯାଞ୍ଚିତ">Rupu Bhatra Verified as Kotpad MLA</div><div class="pc-dt" data-en="2024" data-od="2024">2024</div></div>
     <div class="pc rv"><div class="pc-src" data-en="Local Media" data-od="ସ୍ଥାନୀୟ ମିଡ଼ିଆ">Local Media</div><div class="pc-hl" data-en="MLA Bhatra Begins Development Work Immediately" data-od="ବିଧାୟକ ତୁରନ୍ତ ବିକାଶ କାମ ଆରମ୍ଭ">MLA Bhatra Begins Development Work Immediately</div><div class="pc-dt" data-en="July 2024" data-od="ଜୁଲାଇ 2024">July 2024</div></div>
@@ -704,7 +797,7 @@ footer{background:var(--ink2);}
     <p class="ct-desc rv" data-en="For constituency matters, development projects, or policy discussions." data-od="ନିର୍ବାଚନମଣ୍ଡଳୀ ବିଷୟ, ବିକାଶ ପ୍ରକଳ୍ପ କିମ୍ବା ନୀତି ଆଲୋଚନା ପାଇଁ।">For constituency matters, development projects, or policy discussions.</p>
     <div class="rv">
       <div class="ci"><div class="ci-ico">🏛️</div><div><div class="ci-k" data-en="Assembly Office" data-od="ବିଧାନସଭା କାର୍ଯ୍ୟାଳୟ">Assembly Office</div><div class="ci-v" data-en="Odisha Legislative Assembly, Bhubaneswar, Odisha – 751001" data-od="ଓଡ଼ିଶା ବିଧାନସଭା, ଭୁବନେଶ୍ୱର, ଓଡ଼ିଶା – 751001">Odisha Legislative Assembly, Bhubaneswar, Odisha – 751001</div></div></div>
-      <div class="ci"><div class="ci-ico">🏠</div><div><div class="ci-k" data-en="Constituency Office" data-od="ନିର୍ବାଚନମଣ୍ଡଳୀ କାର୍ଯ୍ୟାଳୟ">Constituency Office</div><div class="ci-v" data-en="Kotpad, Koraput District, Odisha – 764021" data-od="କୋଟପାଦ, କୋରାପୁଟ ଜିଲ୍ଲା, ଓଡ଼ିଶା – 764021">Kotpad, Koraput District, Odisha – 764021</div></div></div>
+      <div class="ci"><div class="ci-ico">🏠</div><div><div class="ci-k" data-en="Constituency Office" data-od="ନିର୍ବାଚନମଣ୍ଡଳୀ କାର୍ଯ୍ୟାଳୟ">Constituency Office</div><div class="ci-v" data-en="Kotpad, Koraput District, Odisha – 764021" data-od="କୋଟପାଡ଼, କୋରାପୁଟ ଜିଲ୍ଲା, ଓଡ଼ିଶା – 764021">Kotpad, Koraput District, Odisha – 764021</div></div></div>
       <div class="ci"><div class="ci-ico">📱</div><div><div class="ci-k" data-en="Contact" data-od="ଯୋଗାଯୋଗ">Contact</div><div class="ci-v" data-en="Through official constituency office" data-od="ଆଧିକାରିକ ନିର୍ବାଚନମଣ୍ଡଳୀ କାର୍ଯ୍ୟାଳୟ ମାଧ୍ୟମରେ">Through official constituency office</div></div></div>
       <div class="ci"><div class="ci-ico">🕐</div><div><div class="ci-k" data-en="Gram Sabha" data-od="ଗ୍ରାମ ସଭା">Gram Sabha</div><div class="ci-v" data-en="Regular community meetings across villages" data-od="ଗାଁଗୁଡ଼ିକରେ ନିୟମିତ ସମୁଦାୟ ବୈଠକ">Regular community meetings across villages</div></div></div>
       <div class="ci"><div class="ci-ico">📅</div><div><div class="ci-k" data-en="Availability" data-od="ଉପଲବ୍ଧତା">Availability</div><div class="ci-v" data-en="Always accessible to constituents" data-od="ସର୍ବଦା ନିର୍ବାଚିତଙ୍କ ପାଇଁ ସୁଲଭ">Always accessible to constituents</div></div></div>
@@ -753,7 +846,7 @@ footer{background:var(--ink2);}
   <div class="ft-main">
     <div>
       <div class="fb-brand">Rupu <em>Bhatra</em></div>
-      <p class="fb-tag" data-en="MLA, Kotpad Constituency, Odisha. Bharatiya Janata Party. Elected June 2024. Committed to transparent governance." data-od="ବିଧାୟକ, କୋଟପାଦ, ଓଡ଼ିଶା। ଭାରତୀୟ ଜନତା ପାର୍ଟି। ଜୁନ 2024 ନିର୍ବାଚିତ। ସ୍ୱଚ୍ଛ ଶାସନରେ ନିଷ୍ଠା।">MLA, Kotpad Constituency, Odisha. Bharatiya Janata Party. Elected June 2024. Committed to transparent governance.</p>
+      <p class="fb-tag" data-en="MLA, Kotpad Constituency, Odisha. Bharatiya Janata Party. Elected June 2024. Committed to transparent governance." data-od="ବିଧାୟକ, କୋଟପାଡ଼, ଓଡ଼ିଶା। ଭାରତୀୟ ଜନତା ପାର୍ଟି। ଜୁନ 2024 ନିର୍ବାଚିତ। ସ୍ୱଚ୍ଛ ଶାସନରେ ନିଷ୍ଠା।">MLA, Kotpad Constituency, Odisha. Bharatiya Janata Party. Elected June 2024. Committed to transparent governance.</p>
       <div class="fb-flag"><span></span><span></span><span></span></div>
       <div style="margin-top:1.2rem;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2);" data-en="Professional Website" data-od="ବୃତ୍ତିଗତ ୱେବସାଇଟ୍">Professional Website</div>
     </div>
@@ -781,7 +874,7 @@ footer{background:var(--ink2);}
     </div>
   </div>
   <div class="ft-bot">
-    <span data-en="© 2024 Rupu Bhatra. Official Website. MLA — Kotpad, Odisha." data-od="© 2024 ରୁପୁ ଭାତ୍ରା। ଆଧିକାରିକ ୱେବସାଇଟ୍। ବିଧାୟକ — କୋଟପାଦ, ଓଡ଼ିଶା।">© 2024 Rupu Bhatra. Official Website. MLA — Kotpad, Odisha.</span>
+    <span data-en="© 2024 Rupu Bhatra. Official Website. MLA — Kotpad, Odisha." data-od="© 2024 ରୁପୁ ଭାତ୍ରା। ଆଧିକାରିକ ୱେବସାଇଟ୍। ବିଧାୟକ — କୋଟପାଡ଼, ଓଡ଼ିଶା।">© 2024 Rupu Bhatra. Official Website. MLA — Kotpad, Odisha.</span>
     <span data-en="Jai Odisha 🇮🇳" data-od="ଜୟ ଓଡ଼ିଶା 🇮🇳">Jai Odisha 🇮🇳</span>
   </div>
 </footer>
@@ -883,13 +976,39 @@ function handleSubmit(btn) {
   }, 3500);
 }
 
+// Gallery Tab Switching Function
+function switchGalleryTab(tabName) {
+  // Hide all gallery sections
+  const galleryTabs = document.querySelectorAll('.gallery-section');
+  galleryTabs.forEach(tab => {
+    tab.style.display = 'none';
+    tab.classList.remove('active');
+  });
+
+  // Remove active class from all buttons
+  const galleryButtons = document.querySelectorAll('.gallery-tab');
+  galleryButtons.forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // Show selected tab
+  const selectedTab = document.getElementById(tabName + '-tab');
+  if (selectedTab) {
+    selectedTab.style.display = 'block';
+    selectedTab.classList.add('active');
+  }
+
+  // Add active class to clicked button
+  event.target.classList.add('active');
+}
+
 function setLang(lang, btn) {
   currentLang = lang;
   document.querySelectorAll('.lt-btn').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
   document.body.classList.toggle('odia', lang === 'od');
   document.documentElement.lang = lang === 'od' ? 'or' : 'en';
-  document.title = lang === 'en' ? 'Rupu Bhatra | MLA Kotpad' : 'ରୁପୁ ଭାତ୍ରା | ବିଧାୟକ କୋଟପାଦ';
+  document.title = lang === 'en' ? 'Rupu Bhatra | MLA Kotpad' : 'ରୁପୁ ଭାତ୍ରା | ବିଧାୟକ କୋଟପାଡ଼';
   
   document.querySelectorAll('[data-en]').forEach(function(el) {
     var text = el.getAttribute('data-' + lang);
@@ -903,6 +1022,12 @@ function setLang(lang, btn) {
   });
   
   document.querySelectorAll('option[data-en]').forEach(function(el) {
+    var text = el.getAttribute('data-' + lang);
+    if (text) el.textContent = text;
+  });
+
+  // Update gallery tab text
+  document.querySelectorAll('.gallery-tab[data-en]').forEach(function(el) {
     var text = el.getAttribute('data-' + lang);
     if (text) el.textContent = text;
   });
