@@ -177,64 +177,18 @@ nav.up{box-shadow:0 2px 24px rgba(0,0,0,0.08);}
 .gallery-item::after{content:'';position:absolute;inset:0;background:rgba(255,106,0,.1);opacity:0;transition:opacity .3s;}
 .gallery-item:hover::after{opacity:1;}
 
+/* VIDEO ITEMS — override aspect-ratio + give iframe room */
+.video-item{position:relative;overflow:hidden;border-radius:8px;padding-top:56.25%;/* 16:9 */cursor:default;box-shadow:0 4px 12px rgba(0,0,0,.08);background:#000;}
+.video-item iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.video-item::after{display:none;}
+
 /* Gallery Tabs Styling */
-.gallery-tab {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 0.7rem 1.5rem;
-  background: none;
-  border: none;
-  color: var(--mid);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  text-transform: uppercase;
-}
-
-.gallery-tab:hover {
-  color: var(--fire);
-}
-
-.gallery-tab.active {
-  color: var(--fire);
-  font-weight: 700;
-}
-
-.gallery-tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2rem;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--fire);
-}
-
-.gallery-section {
-  animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.gallery-section.active {
-  display: block !important;
-}
-
-.gallery-item iframe {
-  width: 100%;
-  height: 100%;
-}
+.gallery-tab{font-family:'Space Mono',monospace;font-size:.9rem;font-weight:700;letter-spacing:.05em;padding:.7rem 1.5rem;background:none;border:none;color:var(--mid);cursor:pointer;transition:all .3s ease;position:relative;text-transform:uppercase;}
+.gallery-tab:hover{color:var(--fire);}
+.gallery-tab.active{color:var(--fire);font-weight:700;}
+.gallery-tab.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--fire);}
+.gallery-section{animation:fadeIn .4s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
 /* VISION */
 #vision .vwrap{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;}
@@ -522,7 +476,7 @@ footer{background:var(--ink2);}
     </div>
 
     <div class="hs-slide active" id="slide-0">
-      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/716723012_2157035898204252_8385175063945873812_n_s0f43u.jpg');background-position:center');background-position:center;"></div>
+      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1781785220/716723012_2157035898204252_8385175063945873812_n_s0f43u.jpg');background-position:center;"></div>
       <div class="hs-overlay"></div>
       <div class="hs-content">
         <div class="hs-chip" data-en="Member of Legislative Assembly · Kotpad · Odisha" data-od="ବିଧାନସଭ୍ୟ · କୋଟପାଡ଼ · ଓଡ଼ିଶା">Member of Legislative Assembly · Kotpad · Odisha</div>
@@ -536,7 +490,7 @@ footer{background:var(--ink2);}
     </div>
 
     <div class="hs-slide" id="slide-1">
-      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1782219955/725861496_2216303605594699_3204381234277858154_n_mjl9ls.jpg;"></div>
+      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1782219955/725861496_2216303605594699_3204381234277858154_n_mjl9ls.jpg');"></div>
       <div class="hs-overlay"></div>
       <div class="hs-content">
         <div class="hs-chip" data-en="Grassroots Leadership · Community First" data-od="ଭିତ୍ତିସ୍ତର ନେତୃତ୍ୱ · ଲୋକଙ୍କ ଆଗୀ">Grassroots Leadership · Community First</div>
@@ -550,7 +504,7 @@ footer{background:var(--ink2);}
     </div>
 
     <div class="hs-slide" id="slide-2">
-      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1781785151/721778522_1025384616541962_1323859806097042015_n_rrlaah.jpg')"></div>
+      <div class="hs-bg" style="background-image:url('https://res.cloudinary.com/dara80vtx/image/upload/v1781785151/721778522_1025384616541962_1323859806097042015_n_rrlaah.jpg');"></div>
       <div class="hs-overlay"></div>
       <div class="hs-content">
         <div class="hs-chip" data-en="Development Focus · 2024 – Present" data-od="ବିକାଶ ଲକ୍ଷ୍ୟ · 2024 – ବର୍ତ୍ତମାନ">Development Focus · 2024 – Present</div>
@@ -634,9 +588,9 @@ footer{background:var(--ink2);}
     </div>
     <div class="ab-right rv">
       <p class="ab-quote" data-en="&quot;Service to the people of Kotpad is not just my duty—it is my passion and my purpose.&quot;" data-od="&quot;କୋଟପାଡ଼ର ଲୋକମାନଙ୍କ ସେବା ମୋର କର୍ତ୍ତବ୍ୟ ନୁହେଁ—ଏହା ମୋର ଆବେଗ ଏବଂ ଉଦ୍ଦେଶ୍ୟ।&quot;">"Service to the people of Kotpad is not just my duty—it is my passion and my purpose."</p>
-      <p class="ab-body" data-en="Rupu Bhatra is an Indian politician elected to the Odisha Legislative Assembly from Kotpad in 2024. He assumes office on 4 June 2024, succeeding Padmini Dian." data-od="ରୁପୁ ଭାତ୍ରା ଜଣେ ଭାରତୀୟ ରାଜନେତା ଯିଏ 2024ରେ କୋଟପାଡ଼ରୁ ଓଡ଼ିଶା ବିଧାନସଭାକୁ ନିର୍ବାଚିତ ହୋଇଥିଲେ। ସେ 4 ଜୁନ 2024ରେ ପଦଭାର ଗ୍ରହଣ କରିଥିଲେ।">Rupu Bhatra is an Indian politician elected to the Odisha Legislative Assembly from Kotpad in 2024. He assumes office on 4 June 2024, succeeding Padmini Dian.</p>
+      <p class="ab-body" data-en="Rupu Bhatra is an Indian politician elected to the Odisha Legislative Assembly from Kotpad in 2024. He assumes office on 4 June 2024, succeeding Padmini Dian." data-od="ରୁପୁ ଭାତ୍ରା ଜଣେ ଭାରତୀୟ ରାଜନେତା ଯିଏ 2024ରେ କୋଟପାଡ଼ରୁ ଓଡ଼ିଶା ବିଧାନସଭାକୁ ନିର୍ବାଚିତ ହୋଇଥିଲେ।">Rupu Bhatra is an Indian politician elected to the Odisha Legislative Assembly from Kotpad in 2024. He assumes office on 4 June 2024, succeeding Padmini Dian.</p>
       <p class="ab-body" data-en="With commitment to grassroots development, Rupu focuses on rural infrastructure, agricultural support, healthcare, and education." data-od="ଭିତ୍ତିସ୍ତର ବିକାଶରେ ଯୁକ୍ତ ରୁପୁ ଗ୍ରାମୀଣ ବୁନିୟାଦୀ ଢାଞ୍ଚା, ଜାତୀୟ ସମର୍ଥନ, ସ୍ୱାସ୍ଥ୍ୟ ଏବଂ ଶିକ୍ଷାରେ ମନୋଯୋଗ କରନ୍ତି।">With commitment to grassroots development, Rupu focuses on rural infrastructure, agricultural support, healthcare, and education.</p>
-      <p class="ab-body" data-en="Known for direct community engagement, he maintains regular contact with constituents and personally oversees development schemes." data-od="ସରାସରି ସମୁଦାୟ ସମ୍ପୃକ୍ତିର ଜନ୍ୟ ପରିଚିତ, ସେ ନିୟମିତ ଭାବରେ ନିର୍ବାଚିତଙ୍କ ସହ ଯୋଗାଯୋଗ କରନ୍ତି ଏବଂ ବିକାଶ ଯୋଜନାର ତଦାରଖ କରନ୍ତି।">Known for direct community engagement, he maintains regular contact with constituents and personally oversees development schemes.</p>
+      <p class="ab-body" data-en="Known for direct community engagement, he maintains regular contact with constituents and personally oversees development schemes." data-od="ସରାସରି ସମୁଦାୟ ସମ୍ପୃକ୍ତିର ଜନ୍ୟ ପରିଚିତ, ସେ ନିୟମିତ ଭାବରେ ନିର୍ବାଚିତଙ୍କ ସହ ଯୋଗାଯୋଗ କରନ୍ତି।">Known for direct community engagement, he maintains regular contact with constituents and personally oversees development schemes.</p>
       <div class="ab-grid">
         <div class="ab-fact"><div class="ab-k" data-en="Constituency" data-od="ନିର୍ବାଚନମଣ୍ଡଳୀ">Constituency</div><div class="ab-v" data-en="Kotpad, Odisha" data-od="କୋଟପାଡ଼, ଓଡ଼ିଶା">Kotpad, Odisha</div></div>
         <div class="ab-fact"><div class="ab-k" data-en="Position" data-od="ପଦବୀ">Position</div><div class="ab-v" data-en="Member of Assembly" data-od="ବିଧାନସଭ୍ୟ">Member of Assembly</div></div>
@@ -656,22 +610,19 @@ footer{background:var(--ink2);}
     <h2 class="sh" data-en="Community <span class='ac'>Moments</span>" data-od="ସମୁଦାୟ <span class='ac'>ମୁହୂର୍ତ୍ତ</span>">Community <span class="ac">Moments</span></h2>
     <p class="ss" data-en="Connecting with Kotpad through service, engagement, and leadership." data-od="ସେବା, ସମ୍ପୃକ୍ତି ଏବଂ ନେତୃତ୍ୱ ମାଧ୍ୟମରେ କୋଟପାଡ଼ ସହ ସଂଯୁକ୍ତ।">Connecting with Kotpad through service, engagement, and leadership.</p>
   </div>
-  
+
   <!-- Gallery Tabs -->
   <div style="display:flex;gap:1rem;margin-bottom:2rem;border-bottom:2px solid var(--border);">
-    <button class="gallery-tab active" onclick="switchGalleryTab('photos')" data-en="📷 Photos" data-od="📷 ଫଟୋ">📷 Photos</button>
-    <button class="gallery-tab" onclick="switchGalleryTab('videos')" data-en="▶️ Videos" data-od="▶️ ଭିଡିଓ">▶️ Videos</button>
+    <button class="gallery-tab active" onclick="switchGalleryTab('photos', this)" data-en="📷 Photos" data-od="📷 ଫଟୋ">📷 Photos</button>
+    <button class="gallery-tab" onclick="switchGalleryTab('videos', this)" data-en="▶️ Videos" data-od="▶️ ଭିଡିଓ">▶️ Videos</button>
   </div>
 
   <!-- Photos Tab -->
-  <div id="photos-tab" class="gallery-section active">
+  <div id="photos-tab" class="gallery-section">
     <div class="gallery-grid">
       <div class="gallery-item rv">
         <img src="https://scontent.fbbi1-2.fna.fbcdn.net/v/t39.99422-6/728469115_1044086498139878_3835440181811159516_n.png?stp=dst-jpg_tt6&cstp=mx1600x1200&ctp=s1600x1200&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3d92lr82ZMAQ7kNvwE5Ki8V&_nc_oc=AdqziPrCU2M2xOkbW4zLXNDFLWXZt5CzR67l2izdYaGATeI-nJn0PrNW-9QPkqagDVcZCL6MB3EhLwM6hoZjaULe&_nc_zt=14&_nc_ht=scontent.fbbi1-2.fna&_nc_gid=aRM6-lpafk8kVbceM2aonQ&_nc_ss=7b2a8&oh=00_Af-A8kNCycrEG-__gZa8T0ZgDTxN8TpQsNBE8MtUK5eKyQ&oe=6A40511A" alt="Community engagement 1">
       </div>
-
-
-
       <div class="gallery-item rv">
         <img src="https://res.cloudinary.com/dara80vtx/image/upload/v1782219955/725861496_2216303605594699_3204381234277858154_n_mjl9ls.jpg" alt="Community event 5">
       </div>
@@ -693,17 +644,17 @@ footer{background:var(--ink2);}
   <!-- Videos Tab -->
   <div id="videos-tab" class="gallery-section" style="display:none;">
     <div class="gallery-grid">
-      <div class="gallery-item rv" style="position:relative;overflow:hidden;">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_R5gmS4bz4c" title="Kotpad MLA 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;"></iframe>
+      <div class="video-item rv">
+        <iframe src="https://www.youtube.com/embed/_R5gmS4bz4c" title="Kotpad MLA 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="gallery-item rv d1" style="position:relative;overflow:hidden;">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ixQn2V7VEpI" title="Kotpad Development" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;"></iframe>
+      <div class="video-item rv d1">
+        <iframe src="https://www.youtube.com/embed/ixQn2V7VEpI" title="Kotpad Development" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="gallery-item rv d2" style="position:relative;overflow:hidden;">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dGCRknPbv6A" title="Community Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;"></iframe>
+      <div class="video-item rv d2">
+        <iframe src="https://www.youtube.com/embed/dGCRknPbv6A" title="Community Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="gallery-item rv d3" style="position:relative;overflow:hidden;">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/evRxI3fZ9VQ" title="Kotpad Updates" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;"></iframe>
+      <div class="video-item rv d3">
+        <iframe src="https://www.youtube.com/embed/evRxI3fZ9VQ" title="Kotpad Updates" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -970,36 +921,33 @@ function handleSubmit(btn) {
   var msg = currentLang === 'en' ? '✓ Message Sent — Thank You!' : '✓ ସନ୍ଦେଶ ପଠାଯାଇଛି — ଧନ୍ୟବାଦ!';
   btn.textContent = msg;
   btn.style.background = '#0A6B04';
-  setTimeout(function() { 
+  setTimeout(function() {
     btn.textContent = btn.getAttribute('data-' + currentLang);
-    btn.style.background = ''; 
+    btn.style.background = '';
   }, 3500);
 }
 
-// Gallery Tab Switching Function
-function switchGalleryTab(tabName) {
-  // Hide all gallery sections
-  const galleryTabs = document.querySelectorAll('.gallery-section');
-  galleryTabs.forEach(tab => {
-    tab.style.display = 'none';
-    tab.classList.remove('active');
+// Gallery Tab Switching — btn passed explicitly, no reliance on global event
+function switchGalleryTab(tabName, btn) {
+  // Hide all sections
+  document.querySelectorAll('.gallery-section').forEach(function(el) {
+    el.style.display = 'none';
+    el.classList.remove('active');
   });
-
-  // Remove active class from all buttons
-  const galleryButtons = document.querySelectorAll('.gallery-tab');
-  galleryButtons.forEach(btn => {
-    btn.classList.remove('active');
+  // Deactivate all tab buttons
+  document.querySelectorAll('.gallery-tab').forEach(function(b) {
+    b.classList.remove('active');
   });
-
-  // Show selected tab
-  const selectedTab = document.getElementById(tabName + '-tab');
-  if (selectedTab) {
-    selectedTab.style.display = 'block';
-    selectedTab.classList.add('active');
+  // Show selected section
+  var target = document.getElementById(tabName + '-tab');
+  if (target) {
+    target.style.display = 'block';
+    target.classList.add('active');
+    // Re-observe any .rv elements that haven't animated yet
+    target.querySelectorAll('.rv:not(.vis)').forEach(function(el) { io.observe(el); });
   }
-
-  // Add active class to clicked button
-  event.target.classList.add('active');
+  // Activate clicked button
+  if (btn) btn.classList.add('active');
 }
 
 function setLang(lang, btn) {
@@ -1009,7 +957,7 @@ function setLang(lang, btn) {
   document.body.classList.toggle('odia', lang === 'od');
   document.documentElement.lang = lang === 'od' ? 'or' : 'en';
   document.title = lang === 'en' ? 'Rupu Bhatra | MLA Kotpad' : 'ରୁପୁ ଭାତ୍ରା | ବିଧାୟକ କୋଟପାଡ଼';
-  
+
   document.querySelectorAll('[data-en]').forEach(function(el) {
     var text = el.getAttribute('data-' + lang);
     if (text) {
@@ -1020,14 +968,8 @@ function setLang(lang, btn) {
       }
     }
   });
-  
-  document.querySelectorAll('option[data-en]').forEach(function(el) {
-    var text = el.getAttribute('data-' + lang);
-    if (text) el.textContent = text;
-  });
 
-  // Update gallery tab text
-  document.querySelectorAll('.gallery-tab[data-en]').forEach(function(el) {
+  document.querySelectorAll('option[data-en]').forEach(function(el) {
     var text = el.getAttribute('data-' + lang);
     if (text) el.textContent = text;
   });
